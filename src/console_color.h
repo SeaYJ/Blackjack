@@ -2,7 +2,7 @@
 
 #include <ostream>
 
-namespace Color {
+namespace ConsoleColor {
 	enum class Code {
 		BOLD = 1,
 		RESET = 0,
@@ -38,20 +38,20 @@ namespace Color {
 	};
 }
 
-static Color::Modifier bold_off(Color::Code::RESET);
-static Color::Modifier bold_on(Color::Code::BOLD);
-static Color::Modifier def(Color::Code::FG_DEFAULT);
-static Color::Modifier red(Color::Code::FG_RED);
-static Color::Modifier green(Color::Code::FG_GREEN);
-static Color::Modifier yellow(Color::Code::FG_YELLOW);
-static Color::Modifier blue(Color::Code::FG_BLUE);
-static Color::Modifier magenta(Color::Code::FG_MAGENTA);
-static Color::Modifier cyan(Color::Code::FG_CYAN);
-static Color::Modifier lightGray(Color::Code::FG_LIGHT_GRAY);
-static Color::Modifier darkGray(Color::Code::FG_DARK_GRAY);
-static Color::Modifier lightRed(Color::Code::FG_LIGHT_RED);
-static Color::Modifier lightGreen(Color::Code::FG_LIGHT_GREEN);
-static Color::Modifier lightYellow(Color::Code::FG_LIGHT_YELLOW);
-static Color::Modifier lightBlue(Color::Code::FG_LIGHT_BLUE);
-static Color::Modifier lightMagenta(Color::Code::FG_LIGHT_MAGENTA);
-static Color::Modifier lightCyan(Color::Code::FG_LIGHT_CYAN);
+static ConsoleColor::Modifier bold_off(ConsoleColor::Code::RESET);
+static ConsoleColor::Modifier bold_on(ConsoleColor::Code::BOLD);
+static ConsoleColor::Modifier def(ConsoleColor::Code::FG_DEFAULT);
+static ConsoleColor::Modifier red(ConsoleColor::Code::FG_RED);
+static ConsoleColor::Modifier green(ConsoleColor::Code::FG_GREEN);
+static ConsoleColor::Modifier yellow(ConsoleColor::Code::FG_YELLOW);
+static ConsoleColor::Modifier blue(ConsoleColor::Code::FG_BLUE);
+static ConsoleColor::Modifier magenta(ConsoleColor::Code::FG_MAGENTA);
+static ConsoleColor::Modifier cyan(ConsoleColor::Code::FG_CYAN);
+static ConsoleColor::Modifier lightGray(ConsoleColor::Code::FG_LIGHT_GRAY);
+static ConsoleColor::Modifier darkGray(ConsoleColor::Code::FG_DARK_GRAY);
+static ConsoleColor::Modifier lightRed(ConsoleColor::Code::FG_LIGHT_RED);
+static ConsoleColor::Modifier lightGreen(ConsoleColor::Code::FG_LIGHT_GREEN);
+static ConsoleColor::Modifier lightYellow(ConsoleColor::Code::FG_LIGHT_YELLOW);
+static ConsoleColor::Modifier lightBlue(ConsoleColor::Code::FG_LIGHT_BLUE);
+static ConsoleColor::Modifier lightMagenta(ConsoleColor::Code::FG_LIGHT_MAGENTA);
+static ConsoleColor::Modifier lightCyan(ConsoleColor::Code::FG_LIGHT_CYAN);

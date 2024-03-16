@@ -1,45 +1,52 @@
 #include "card.h"
 
-const Card::Rank Card::rank() const
+const std::array<const std::string, 13> Card::_kSymbolStr = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "X", "J", "Q", "K" };
+
+
+Card::Rank Card::rank() const
 {
-	return _kRank;
+	return _rank;
 }
 
-const std::string Card::symbol() const
+std::string Card::symbol() const
 {
-	return _kSymbol;
+	return _symbol;
 }
 
-const int Card::points() const
+int Card::points() const
 {
-	return _kPoints;
+	return _points;
 }
 
-std::string Card::display(const int line) const
+std::string Card::Display(const int line) const
 {
 	// 避免字符串的多次拼接带来的性能消耗
 	std::stringstream ss;
 
+	ss << (this->_color);
+
 	switch (line) {
 		case 0: ss << ".------."; break;
-		case 1: ss << "|" << (this->_kSymbol) << ".--. |"; break;
+		case 1: ss << "|" << (this->_symbol) << ".--. |"; break;
 		case 2: ss << (this->printSpecialLine(1)); break;
 		case 3: ss << (this->printSpecialLine(2)); break;
-		case 4: ss << "| '--'" << (this->_kSymbol) << "|"; break;
+		case 4: ss << "| '--'" << (this->_symbol) << "|"; break;
 		case 5: ss << "`------'"; break;
 		default:ss << ""; break;
 	}
 
+	ss << def;
+
 	return ss.str();
 }
 
-std::string Card::display() const
+std::string Card::Display() const
 {
 	// 避免字符串的多次拼接带来的性能消耗
 	std::stringstream ss;
 
 	for (int i = 0; i < 6; i++) {
-		ss << display(i) << "\n";
+		ss << Display(i) << (i == 5 ? "" : "\n");
 	}
 
 	return ss.str();
@@ -50,23 +57,21 @@ std::string Card::printSpecialLine(const int line) const
 	switch (line)
 	{
 		case 1:
-			switch (this->_kRank)
+			switch (this->_rank)
 			{
 				case Card::Rank::ACE: case Card::Rank::THREE: case Card::Rank::FIVE:
 				case Card::Rank::SEVEN: case Card::Rank::NINE:
 					return std::string("| :/\\: |");
-					break;
 				case Card::Rank::TWO: case Card::Rank::FOUR: case Card::Rank::SIX:
-				case Card::Rank::EIGHT: case Card::Rank::TEN:
+				case Card::Rank::EIGHT: 
 					return std::string("| :(): |");
-					break;
+				case Card::Rank::TEN:
 				default:
 					return std::string("|  //  |");
-					break;
 			}
 			break;
 		default:
-			switch (this->_kRank)
+			switch (this->_rank)
 			{
 				case Card::Rank::ACE:
 					return std::string("| :\\/: |");
@@ -74,8 +79,9 @@ std::string Card::printSpecialLine(const int line) const
 				case Card::Rank::SEVEN: case Card::Rank::NINE:
 					return std::string("| (__) |");
 				case Card::Rank::TWO: case Card::Rank::FOUR: case Card::Rank::SIX:
-				case Card::Rank::EIGHT: case Card::Rank::TEN:
+				case Card::Rank::EIGHT:
 					return std::string("| ()() |");
+				case Card::Rank::TEN:
 				default:
 					return std::string("|  //  |");
 			}

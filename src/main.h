@@ -5,3 +5,5 @@
 
 using namespace std;
 
+// µ÷ÊÔº¯Êý
+void Debug();

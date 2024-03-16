@@ -21,6 +21,12 @@
     <ClCompile Include="src\card.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\deck.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\main.h">
@@ -30,6 +36,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\console_color.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\deck.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\player.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
