@@ -39,3 +39,8 @@ BlackjackGame& BlackjackGame::GameManual() {}
 函数里的内容，因为那里包含我的网名。如果你介意，可以将其删除，但是**不可以改成你的名字**！
 
 或者你可以为我的项目**点个小星星**吧！我想我这点要求不算过分吧？
+
+# 运行截图
+
+![动态图 有裁剪](./readme_imgs/run.gif)
+![静态图](./readme_imgs/SeaEpoch_2024-04-04_17-28-59.jpg)
