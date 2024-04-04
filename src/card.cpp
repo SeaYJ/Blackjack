@@ -2,7 +2,6 @@
 
 const std::array<const std::string, 13> Card::_kSymbolStr = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "X", "J", "Q", "K" };
 
-
 Card::Rank Card::rank() const
 {
 	return _rank;
@@ -18,19 +17,19 @@ int Card::points() const
 	return _points;
 }
 
-std::string Card::Display(const int line) const
+std::string Card::Display(const int line, bool masked) const
 {
 	// 避免字符串的多次拼接带来的性能消耗
 	std::stringstream ss;
 
-	ss << (this->_color);
+	ss << (masked ? darkGray : this->_color);
 
 	switch (line) {
 		case 0: ss << ".------."; break;
-		case 1: ss << "|" << (this->_symbol) << ".--. |"; break;
-		case 2: ss << (this->printSpecialLine(1)); break;
-		case 3: ss << (this->printSpecialLine(2)); break;
-		case 4: ss << "| '--'" << (this->_symbol) << "|"; break;
+		case 1: ss << "|" << (masked ? "?" : this->_symbol) << ".--. |"; break;
+		case 2: ss << (masked ? "| ???? |" : this->printSpecialLine(1)); break;
+		case 3: ss << (masked ? "| ???? |" : this->printSpecialLine(2)); break;
+		case 4: ss << "| '--'" << (masked ? "?" : this->_symbol) << "|"; break;
 		case 5: ss << "`------'"; break;
 		default:ss << ""; break;
 	}
@@ -40,13 +39,13 @@ std::string Card::Display(const int line) const
 	return ss.str();
 }
 
-std::string Card::Display() const
+std::string Card::Display(bool masked) const
 {
 	// 避免字符串的多次拼接带来的性能消耗
 	std::stringstream ss;
 
 	for (int i = 0; i < 6; i++) {
-		ss << Display(i) << (i == 5 ? "" : "\n");
+		ss << Display(i, masked) << (i == 5 ? "" : "\n");
 	}
 
 	return ss.str();

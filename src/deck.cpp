@@ -2,10 +2,10 @@
 
 Deck::Deck()
 {
-	this->resetDeck();
+	this->ResetDeck();
 }
 
-Deck& Deck::resetDeck()
+Deck& Deck::ResetDeck()
 {
 	// 按顺序构造 13 * 4 = 52 张牌
 	int minRank = static_cast<int>(Card::Rank::ACE);
@@ -34,4 +34,29 @@ Card Deck::DealCard()
 	Card card = _deck.back();
 	_deck.pop_back();
 	return card;
+}
+
+Card Deck::DealCard(Card::Rank rank)
+{
+	for (std::vector<Card>::iterator it = _deck.begin(); it != _deck.end(); it++) {
+		if ((*it).rank() == rank) {
+			Card c = (*it);
+			_deck.erase(it);
+			return c;
+		}
+	}
+
+	// 如果未找到指定 rank 的 Card，则抛出异常
+	throw std::runtime_error("Card not found.");
+}
+
+Card Deck::PeekNextCard()
+{
+	Card card = _deck.back();
+	return card;
+}
+
+const int Deck::DeckSize() const
+{
+	return static_cast<const int>(_deck.size());
 }

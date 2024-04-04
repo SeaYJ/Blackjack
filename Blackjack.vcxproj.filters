@@ -27,6 +27,9 @@
     <ClCompile Include="src\player.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\blackjack_game.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\main.h">
@@ -42,6 +45,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\player.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\blackjack_game.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef _CARD_H_
+#define _CARD_H_
+
 #include <iostream>
 #include <string>
 #include <array>
@@ -20,7 +23,7 @@ public:
 		_symbol(_kSymbolStr[static_cast<int>(rank) - 1]),
 		_points((rank >= Rank::JACK ? int(static_cast<int>(rank) * 0.5) : static_cast<int>(rank))),
 		_color((rank >= Rank::TEN ? yellow : def))
-	{}		
+	{}
 
 	// 取函数
 	Rank rank() const;
@@ -28,8 +31,8 @@ public:
 	int points() const;
 
 	// 普通功能函数
-	std::string Display(const int line) const;	// 单行展示（留着多牌并列输出的）
-	std::string Display() const;				// 基于单行展示实现的完整牌形展示
+	std::string Display(const int line, bool masked = false) const;	// 单行展示（留着多牌并列输出的）
+	std::string Display(bool masked = false) const;					// 基于单行展示实现的完整牌形展示
 
 private:
 	static const std::array<const std::string, 13> _kSymbolStr;
@@ -41,3 +44,4 @@ private:
 	std::string printSpecialLine(const int line) const;
 };
 
+#endif // !_CARD_H_
