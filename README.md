@@ -4,7 +4,7 @@
 ![Windows Badge](https://img.shields.io/badge/Windows-0078D6?logo=windows&logoColor=fff&style=flat)
 ![Visual Studio Badge](https://img.shields.io/badge/VS2022-aa7cdf?logo=visualstudio&style=flat)
 
-This repository is one of the outsourced projects I've taken on, but because I really like the theme of this project, I've decided to put my heart into writing it and hone my C++ skills within this project.
+这个代码库是我接手的外包项目之一。但因为我非常喜欢这个项目的主题，我决定全力投入编写代码，并借此机会提升我的C++技能。这个项目不仅让我非常有成就感💪，也是一个绝佳的学习机会📚，希望对你的学习也有所帮助🤓。
 
 # 项目计划目标
 
@@ -36,9 +36,9 @@ This repository is one of the outsourced projects I've taken on, but because I r
 BlackjackGame& BlackjackGame::GameManual() {}
 ```
 
-函数里的内容，因为那里包含我的网名。如果你介意，可以将其删除，但是**不可以改成你的名字**！
+函数里的内容，因为那里包含我的网名。如果你介意，可以将其删除！
 
-或者你可以为我的项目**点个小星星**吧！我想我这点要求不算过分吧？
+或者你可以为我的项目**点个小星星**吧！
 
 # 运行截图
 
